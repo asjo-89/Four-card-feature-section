@@ -15,14 +15,20 @@
     --blue: #549EF2;
     --orange: #FCAE4A;
 
+    --box-shadow-color:  rgba(131, 167, 210, 0.388);
+
     --gap-0-5: 0.5em;
     --gap-1: 1em;
     --gap-1-5: 1.5em;
+    --gap-1-7: 1.7em;
     --gap-2: 2em;
     --gap-2-5: 2.5em;
+
+    --border-radius: 0.5em;
 }
 
 body {
+    background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -31,10 +37,23 @@ body {
     letter-spacing: 0;
 }
 
+main {
+    padding: var(--gap-1-7);
+    padding-top: var(--gap-2-5);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-1-5);
+}
+
 h1 {
     font-weight: 600;
     line-height: 1.4;
-    font-size: 2.25em;
+    font-size: clamp(1.5rem, 1.5rem + 0.5vw, 2.25rem);
     letter-spacing: 0.25px;
 }
 
@@ -45,7 +64,7 @@ h1 {
 h2 {
     font-weight: 600;
     line-height: 1.35;
-    font-size: 1.25em; 
+    font-size: 1.25rem; 
 }
 
 p {
@@ -55,6 +74,66 @@ p {
 
 small {
     font-weight: 400;
+    color: var(--grey-400);
     line-height: 1.6;
-    font-size: 0.8em;
+    font-size: 0.8rem;
+}
+
+.title-wrapper {
+    width: clamp(18.75em, 100%, 33.75em); /* Adjust the values as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-1);
+    text-align: center;
+}
+
+.cards-wrapper {
+    width: clamp(18.75em, 100%, 69.6em); /* Adjust the values as needed */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-1-5);
+    justify-content: center;
+}
+
+.card {
+    width: clamp(18.75em, 100%, 21.9em);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.75em 0.9em var(--box-shadow-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card-top-banner {
+    height: 0.4em;
+    width: 100%;
+}
+
+.card-content {
+    width: 100%;
+    padding: var(--gap-2);
+}
+
+.card-content figure {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-block: var(--gap-1-5);
+}
+
+.cyan {
+    background-color: var(--cyan);
+}
+.red {
+    background-color: var(--red);
+}
+.orange {
+    background-color: var(--orange);
+}
+.blue {
+    background-color: var(--blue);
 }
